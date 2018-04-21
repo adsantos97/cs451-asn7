@@ -35,11 +35,9 @@ mil(A, B) :- mother(A, C), married(C, B).
 grandparent(A, B) :- parent(A, C), parent(C, B).
 grandmother(A, B) :- mother(A, C), parent(C, B).
 
-%sibling(A, B) :- sister(A,B)
-%sibling(A, B) :- brother(A,B)
+sibling(A, B) :- parent(C, A), parent(C, B).
 
-%sibling(A, B) :- parent(C, A), parent(C, B).
-%sibling(A, B) :- parent(C, B), parent(C, A).
+cousin(A, B) :- parent(C, A), parent(D, B), sibling(C, D).
 
 % D - grandparent
 % C & E - parents
