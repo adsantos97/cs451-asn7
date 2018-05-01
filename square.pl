@@ -1,12 +1,36 @@
-% natural numbers
-% add(zero, X, X).
-add(0, X, X).
-add(s(X), Y, s(Z)) :- add(X, Y, Z).
+% Arizza Santos
+% CS451 ASN7
 
-less(0, s(_)).
-less(s(A), s(B)) :- less(A, B).
+%magic_square([
+%    row(_,_,_),
+%    row(_,_,_),
+%    row(_,_,_)
+%]).
 
-less_one(1, s(_)).
-less_one(s(A), s(B)) :- less_one(A, B).
+%generate([
+%    N1, N2, N3,
+%    N4, N5, N6,
+%    N7, N8, N9
+%]) :- 
+%Numbers = [1,2,3,4,5,6,7,8,9].
+
+remove(X, [X|Y], Y).
+remove(X, [H|Y], [H|Z]) :- remove(X, Y, Z).  
+
+%permutate([], []).
+%permutate([X|Xs], L) :- permutate(Xs, L1), remove(X, L, L1). 
 
 
+
+%numbers([1,2,3,4,5,6,7,8,9]).
+
+%takeout(X,[X|R],R).  
+%takeout(X,[F |R],[F|S]) :- takeout(X,R,S).
+
+%perm([X|Y],Z) :- perm(Y,W), takeout(X,Z,W).  
+%perm([],[]).
+
+print_magic_square([A|B]) :- !,
+    write(A), nl,
+    print_magic_square(B).
+print_magic_square([]).
