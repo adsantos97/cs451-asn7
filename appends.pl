@@ -46,7 +46,7 @@ concat_three(Xs, Ys) :- app([Xs], [Xs,Xs], Ys).
 % [[1,2],[1,2],[1,2]]?"
 % concat_three(X, [[1,2],[1,2],[1,2]]).
 % "Is [1,2] concatenated three times [[1,2],[1,2],[1,2]]?"
-% concat_three([[1,2],[1,2],[1,2]]).
+% concat_three([[1,2],[[1,2],[1,2]]).
 % "What is the result of concatenating three copies of [1,2]?"
 % concat_three([1,2], X).
 
